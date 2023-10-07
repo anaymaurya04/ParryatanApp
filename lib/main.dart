@@ -70,10 +70,8 @@ class _MyHomePageState extends State<MyHomePage> {
         toolbarHeight: 100,
         title: Text(
           "Hello, $temp",
-<<<<<<< Updated upstream
-          style: const TextStyle(
-              fontFamily: "Nexa-Trial-Regular", fontSize: 24, color: gblack),
-=======
+
+
         style: const TextStyle(
           fontFamily: "Nexa-Trial-Regular",
           fontSize: 24,
@@ -104,52 +102,8 @@ class _MyHomePageState extends State<MyHomePage> {
             )
           ]
         )
->>>>>>> Stashed changes
+
         ),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-            height: 800,
-            width: double.infinity,
-            padding: const EdgeInsets.all(16.0),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Expanded(
-                  child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: gskin))),
-              const SizedBox(
-                height: 15,
-                width: 15,
-              ),
-              Expanded(
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25), color: gskin)),
-              ),
-              const SizedBox(
-                height: 15,
-                width: 15,
-              ),
-              Expanded(
-                child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25), color: gskin)),
-              ),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const Monupage();
-                    }));
-                  },
-                  child: const Text("Next page"),
-                ),
-              )
-            ])),
       ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 20),
