@@ -66,7 +66,9 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gskin,
-      appBar: AppBar(centerTitle: true,
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
       toolbarHeight: 100,
         title:  Text(
           "Hello, $temp",
