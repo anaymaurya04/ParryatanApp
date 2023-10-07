@@ -5,6 +5,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/monu_page.dart';
 import 'package:test_scanner/splash_screen.dart';
+import 'package:test_scanner/nav_bar.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -63,9 +64,18 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const NavBar(),
       backgroundColor: gskin,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: Padding(
+          padding: const EdgeInsets.only(left:10),
+          child: Builder(builder: (context) {
+              return IconButton(
+                onPressed: () { Scaffold.of(context).openDrawer();},
+                icon: Image.asset('lib/icons/hamburger.png'),
+              );
+            }),
+        ),
         centerTitle: true,
         toolbarHeight: 100,
         title: Text(

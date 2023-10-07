@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/main.dart';
 
+
 class Monupage extends StatelessWidget {
   const Monupage({super.key});
 
