@@ -25,13 +25,19 @@ class Monupage extends StatelessWidget {
           ),
           elevation: 0.0,
       ),
-      body: Column(children: [
-        Expanded(child: Container(
-          width: 100,
-          height: 100,
-          child: Image.asset('lib/images/khusro-bagh.jpg'),
-        ))
-      ],),
+      body: SingleChildScrollView(child: Container( 
+        height: 100,
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+        Expanded(child: Container(decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),color: gskin)),),
+            const SizedBox(height: 10, width: 10,),
+        Expanded(child: Container(decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25),color: gskin)),),
+      ],),))
     );
   }
 }
