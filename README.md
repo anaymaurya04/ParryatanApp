@@ -1,3 +1,3 @@
 # Pattyatan
 
-This Project is made bt Team Parryatan for UHack 2.0. Using Flutter
+This Project is made by Team Parryatan for UHack 2.0. Using Flutter
