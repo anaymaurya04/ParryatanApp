@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/monu_page.dart';
+import 'package:test_scanner/onboard_screen.dart';
 import 'package:test_scanner/splash_screen.dart';
 
 Future main() async {
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
               backgroundColor: Colors.transparent, elevation: 0.0)),
-      home: const SplashScreen(),
+      home: const OnBoardingScreen(),
     );
   }
 }
@@ -121,14 +123,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ])),
       ),
       floatingActionButton: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.only(bottom: 15),
         child: FloatingActionButton.extended(
             backgroundColor: gpurple,
             onPressed: () {
               _scanQR(); // calling a function when user click on button
             },
             shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(13)),
             label: const Text(
               "Scan QR",
               style: TextStyle(
