@@ -1,3 +1,3 @@
-# test_scanner
+# Pattyatan
 
-A new Flutter project.
+This Project is made bt Team Parryatan for UHack 2.0. Using Flutter
