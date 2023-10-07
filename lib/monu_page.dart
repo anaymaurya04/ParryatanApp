@@ -28,27 +28,27 @@ class Monupage extends StatelessWidget {
           elevation: 0.0,
       ),
       body: SingleChildScrollView(child: Container( 
-        height: 800,
+        height: 700,
         width: double.infinity,
         padding: const EdgeInsets.all(16.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
         Expanded(
-          flex:3, child: ClipRRect(
+          flex:5, child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             clipBehavior: Clip.hardEdge,
             child: Image.asset('lib/images/Khusrubagh Image.png', fit: BoxFit.contain,),
           ),
        ),
-            const SizedBox(height: 10, width: 10,),
+            const SizedBox(height: 1, width: 1,),
         Expanded(
           flex:8, child: Container(decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),color: glight),
             child: Expanded(child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Text(content, textAlign: TextAlign.justify, style: const TextStyle(fontSize: 18, fontFamily: "Nexa-Trial-Regular"),maxLines: null,
-              ),
+              child: SingleChildScrollView(
+                scrollDirection:Axis.vertical,child: Text(content, textAlign: TextAlign.justify, style: const TextStyle(fontSize: 18, fontFamily: "Nexa-Trial-Regular"),)),
             )),),),
       ],),))
     );
