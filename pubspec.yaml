@@ -25,6 +25,7 @@ flutter:
 
   assets:
     - lib/icons/
+    - lib/images/
 
   fonts:
     - family: NexaTextDemo-Bold

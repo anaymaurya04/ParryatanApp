@@ -25,8 +25,12 @@ class Monupage extends StatelessWidget {
           ),
           elevation: 0.0,
       ),
-      body: const Column(children: [
-        Expanded(child: Text("Hello"))
+      body: Column(children: [
+        Expanded(child: Container(
+          width: 100,
+          height: 100,
+          child: Image.asset('lib/images/khusro-bagh.jpg'),
+        ))
       ],),
     );
   }
