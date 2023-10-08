@@ -48,16 +48,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String? result = "Val";
+  String? result;
   String? temp = "Anay";
+
   Future _scanQR() async {
     try {
       requestCameraPermission();
       String? cameraScanResult = await scanner.scan();
-      setState(() {
-        result =
-            cameraScanResult; // setting string result with cameraScanResult
-      });
+      if (cameraScanResult != null && cameraScanResult.isNotEmpty) {
+        // Check the scanned content and decide which page to navigate to
+        if (cameraScanResult == "menu") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Monupage();
+          }));
+        } else if (cameraScanResult == "menu2") {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Monupage2();
+          }));
+        } else {
+          // Handle other cases or show an error message
+        }
+      }
     } on PlatformException catch (e) {
       print(e);
     }
@@ -143,7 +154,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text("Login Screen"),
                 ),
-              )
+              ),
             ])),
       ),
       floatingActionButton: Padding(
@@ -164,5 +175,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
     );
+    throw UnimplementedError();
   }
+
+  // ... Rest of your MyHomePage code remains the same
 }

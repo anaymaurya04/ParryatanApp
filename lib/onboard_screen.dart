@@ -132,6 +132,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           opacity: 0.5,
                           child: TextButton(
                             onPressed: () {
+                              requestCameraPermission();
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
                                 return const MyHomePage();

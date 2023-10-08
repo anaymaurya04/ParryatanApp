@@ -16,3 +16,15 @@ class Monupage extends StatelessWidget {
     );
   }
 }
+
+class Monupage2 extends StatelessWidget {
+  const Monupage2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MonumentWidget(
+        title: "Khushrobagh, Prayagraj",
+        imageAsset: 'lib/images/Khusrubagh Image.png',
+        content: "Hello");
+  }
+}
