@@ -138,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const LoginScreen();
+                      return const LoginPage();
                     }));
                   },
                   child: const Text("Login Screen"),
