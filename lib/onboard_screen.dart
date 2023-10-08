@@ -29,7 +29,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           LiquidSwipe(
             liquidController: _liquidController,
             enableLoop: false,
-            disableUserGesture: true,
+            disableUserGesture: false,
             pages: [
               Container(
                 width: double.infinity,
