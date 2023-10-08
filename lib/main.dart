@@ -44,20 +44,34 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String? result = "Val";
+  String? result;
   String? temp = "Anay";
+
   Future _scanQR() async {
     try {
       requestCameraPermission();
       String? cameraScanResult = await scanner.scan();
-      setState(() {
-        result =
-            cameraScanResult; // setting string result with cameraScanResult
-      });
+      if (cameraScanResult != null && cameraScanResult.isNotEmpty) {
+        // Check the scanned content and decide which page to navigate to
+        if (cameraScanResult == "menu") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Monupage();
+          }));
+        } else if (cameraScanResult == "menu2") {
+          // ignore: use_build_context_synchronously
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const Monupage2();
+          }));
+        } else {
+          // Handle other cases or show an error message
+        }
+      }
     } on PlatformException catch (e) {
       print(e);
     }
@@ -143,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: const Text("Login Screen"),
                 ),
-              )
+              ),
             ])),
       ),
       floatingActionButton: Padding(
@@ -165,4 +179,6 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButtonLocation.miniCenterFloat,
     );
   }
+
+  // ... Rest of your MyHomePage code remains the same
 }
