@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
               backgroundColor: Colors.transparent, elevation: 0.0)),
-      home: const OnBoardingScreen(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -70,13 +70,15 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: gskin,
       appBar: AppBar(
         leading: Padding(
-          padding: const EdgeInsets.only(left:10),
+          padding: const EdgeInsets.only(left: 10),
           child: Builder(builder: (context) {
-              return IconButton(
-                onPressed: () { Scaffold.of(context).openDrawer();},
-                icon: Image.asset('lib/icons/hamburger.png'),
-              );
-            }),
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Image.asset('lib/icons/hamburger.png'),
+            );
+          }),
         ),
         centerTitle: true,
         toolbarHeight: 100,
