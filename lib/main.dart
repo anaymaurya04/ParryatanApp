@@ -6,7 +6,7 @@ import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/monu_page.dart';
 import 'package:test_scanner/login.dart';
 import 'package:test_scanner/splash_screen.dart';
-import 'package:test_scanner/nav_bar.dart';
+import 'package:test_scanner/drawer.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
