@@ -44,6 +44,7 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
@@ -58,10 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
       if (cameraScanResult != null && cameraScanResult.isNotEmpty) {
         // Check the scanned content and decide which page to navigate to
         if (cameraScanResult == "menu") {
+          // ignore: use_build_context_synchronously
           Navigator.push(context, MaterialPageRoute(builder: (context) {
             return const Monupage();
           }));
         } else if (cameraScanResult == "menu2") {
+          // ignore: use_build_context_synchronously
           Navigator.push(context, MaterialPageRoute(builder: (context) {
             return const Monupage2();
           }));
@@ -149,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return const LoginScreen();
+                      return const LoginPage();
                     }));
                   },
                   child: const Text("Login Screen"),
@@ -175,7 +178,6 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation:
           FloatingActionButtonLocation.miniCenterFloat,
     );
-    throw UnimplementedError();
   }
 
   // ... Rest of your MyHomePage code remains the same
