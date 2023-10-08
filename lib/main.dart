@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/monu_page.dart';
-import 'package:test_scanner/onboard_screen.dart';
+import 'package:test_scanner/login.dart';
 import 'package:test_scanner/splash_screen.dart';
 import 'package:test_scanner/nav_bar.dart';
 
@@ -129,7 +129,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       return const Monupage();
                     }));
                   },
-                  child: const Text("Next page"),
+                  child: const Text("Blog page"),
+                ),
+              ),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const LoginScreen();
+                    }));
+                  },
+                  child: const Text("Login Screen"),
                 ),
               )
             ])),

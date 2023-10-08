@@ -1,11 +1,7 @@
-import 'dart:async';
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/main.dart';
-import 'package:test_scanner/splash_screen.dart';
 import 'package:flutter/painting.dart';
 
 class OnBoardingScreen extends StatefulWidget {
@@ -116,7 +112,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors
+                            backgroundColor: Colors
                                 .transparent, // Make the button transparent
                             elevation: 0, // Remove button elevation
                             padding: const EdgeInsets.symmetric(
@@ -153,7 +149,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               Container(
                 width: double.infinity,
-                color: Color.fromARGB(255, 34, 35, 58),
+                color: const Color.fromARGB(255, 34, 35, 58),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -230,7 +226,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                 page: 2, duration: 350);
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors
+                            backgroundColor: Colors
                                 .transparent, // Make the button transparent
                             elevation: 0, // Remove button elevation
                             padding: const EdgeInsets.symmetric(
@@ -250,7 +246,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           opacity: 0.5,
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(context,
+                              Navigator.pop(context,
                                   MaterialPageRoute(builder: (context) {
                                 return const MyHomePage();
                               }));
