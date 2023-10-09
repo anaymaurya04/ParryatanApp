@@ -1,19 +1,19 @@
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:test_scanner/login.dart';
 import 'package:test_scanner/main.dart';
 import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/signup.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({Key? key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     const Text(
-                      'Login',
+                      'Sign Up',
                       style: TextStyle(
                         color: gskin,
                         fontFamily: "Nexa-Trial-Regular",
@@ -70,6 +70,43 @@ class _LoginPageState extends State<LoginPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          TextFormField(
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: gskin,
+                              fontFamily: "Nexa-Trial-Regular",
+                            ),
+                            decoration: InputDecoration(
+                              labelText: 'Name',
+                              labelStyle: const TextStyle(color: Colors.grey),
+                              alignLabelWithHint: true,
+                              hintText: 'Enter your full name',
+                              hintStyle: const TextStyle(
+                                color: Colors.grey,
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Colors.grey,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: gskin,
+                                ),
+                                borderRadius: BorderRadius.circular(8.0),
+                              ),
+                            ),
+                          ),
+                          const Text(
+                            'Name cannot be empty',
+                            style: TextStyle(
+                                color: Color.fromARGB(80, 243, 232, 228),
+                                fontFamily: 'Nexa-Trial-Regular'),
+                          ),
+                          const SizedBox(
+                            height: 25,
+                          ),
                           TextFormField(
                             style: const TextStyle(
                               fontSize: 16,
@@ -98,14 +135,18 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ),
                           ),
+                          const SizedBox(
+                            height: 10, // Adjusted height for better spacing
+                          ),
                           const Text(
-                            'Enter a valid email id',
+                            'Enter a valid email',
                             style: TextStyle(
-                                color: Color.fromARGB(80, 243, 232, 228),
-                                fontFamily: 'Nexa-Trial-Regular'),
+                              color: Color.fromARGB(80, 243, 232, 228),
+                              fontFamily: 'Nexa-Trial-Regular',
+                            ),
                           ),
                           const SizedBox(
-                            height: 28,
+                            height: 25,
                           ),
                           TextFormField(
                             style: const TextStyle(
@@ -169,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     const SizedBox(
-                      height: 50,
+                      height: 25,
                     ),
                     Container(
                       height: 35,
@@ -194,7 +235,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         child: const Text(
-                          "Login",
+                          "Sign Up",
                           style: TextStyle(
                             fontSize: 14,
                             fontFamily: "Nexa-Trial-Regular",
@@ -211,11 +252,11 @@ class _LoginPageState extends State<LoginPage> {
                         onPressed: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return const SignupPage();
+                            return const LoginPage();
                           }));
                         },
                         child: const Text(
-                          'New User? Register',
+                          'Already Registed? Login',
                           style: TextStyle(
                             color: gskin,
                             fontSize: 12,
