@@ -8,7 +8,7 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: gskin,
+      backgroundColor: gskin,
       drawer: DrawerW(),
       appBar: AppBar(
         leading: Padding(
@@ -21,7 +21,29 @@ class About extends StatelessWidget {
               icon: Image.asset('lib/icons/hamburger.png'),
             );
           }),
-        ),)
+        ),
+        centerTitle: true,
+        toolbarHeight: 100,
+        title: const Text(
+          "About",
+          style: TextStyle(
+              fontFamily: "Nexa-Trial-Regular", fontSize: 24, color: gblack),
+        ),
+      ),
+      body: Container(
+        height: 800,
+        width: double.infinity,
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Expanded(
+                child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                        color: glight)))
+          ],
+        ),
+      ),
     );
   }
 }
