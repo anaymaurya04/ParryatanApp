@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:test_scanner/about.dart';
+import 'package:test_scanner/account.dart';
 import 'package:test_scanner/color/color.dart';
-
+import 'package:test_scanner/main.dart';
+import 'package:test_scanner/settings.dart';
 class DrawerList extends StatefulWidget {
   
 
@@ -24,10 +27,26 @@ class _DrawerListState extends State<DrawerList> {
       ),
       child: Column(
         children: [
-          menuItem(id: 1, title: 'Account', icon: Icons.person_rounded,selected: currentPage == Drawersection.account? true:false),
-          menuItem(id: 2, title: 'Homepage', icon: Icons.home,selected: currentPage == Drawersection.home? true:false),
-          menuItem(id: 3, title: 'Settings', icon: Icons.settings_rounded,selected: currentPage == Drawersection.settings? true:false),
-          menuItem(id: 4, title: 'About', icon: Icons.info_outlined,selected: currentPage == Drawersection.about? true:false)
+          menuItem(id: 1, title: 'Account', icon: Icons.person_rounded,selected: currentPage == Drawersection.account? true:false,onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return const Acc();
+            }));
+          },),
+          menuItem(id: 2, title: 'Homepage', icon: Icons.home,selected: currentPage == Drawersection.home? true:false,onPressed: (){
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return const MyHomePage();
+            }));
+          }),
+          menuItem(id: 3, title: 'Settings', icon: Icons.settings_rounded,selected: currentPage == Drawersection.settings? true:false,onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return const Settings();
+            }));
+          }),
+          menuItem(id: 4, title: 'About', icon: Icons.info_outlined,selected: currentPage == Drawersection.about? true:false,onPressed: () {
+            Navigator.push(context,MaterialPageRoute(builder: (context){
+              return const About();
+            }));
+          })
         ],
       ),
       );
@@ -39,12 +58,11 @@ Widget menuItem({
   required String title,
   required IconData icon,
   required bool selected,  
+   required VoidCallback onPressed,
 }){
-  return Material( color: selected ? Colors.white : Colors.transparent,
+  return Material( 
   child: InkWell(
-    onTap: (){
-      
-    },
+    onTap: onPressed,
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Row(
