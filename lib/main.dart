@@ -122,7 +122,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        color: glight)),
+                        color: glight),
+                        ),
               ),
               const SizedBox(
                 height: 15,
