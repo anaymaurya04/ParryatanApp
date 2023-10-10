@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:test_scanner/color/color.dart';
+import 'package:test_scanner/login.dart';
 import 'package:test_scanner/main.dart';
 import 'package:flutter/painting.dart';
 
@@ -135,7 +136,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               requestCameraPermission();
                               Navigator.push(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const MyHomePage();
+                                return const LoginPage();
                               }));
                             },
                             child: const Text(
@@ -249,7 +250,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             onPressed: () {
                               Navigator.pop(context,
                                   MaterialPageRoute(builder: (context) {
-                                return const MyHomePage();
+                                return const LoginPage();
                               }));
                             },
                             child: const Text(
@@ -339,7 +340,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
-                              return const MyHomePage();
+                              return const LoginPage();
                             }));
                           },
                           style: ElevatedButton.styleFrom(
