@@ -101,6 +101,16 @@ class _MyHomePageState extends State<MyHomePage> {
           style: const TextStyle(
               fontFamily: "Nexa-Trial-Regular", fontSize: 24, color: gblack),
         ),
+        actions: [Builder(
+          builder: (context) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: IconButton(onPressed: (){
+                Scaffold.of(context).openDrawer();
+              }, icon: const Icon(Icons.person_rounded),color: gblack,iconSize: 30,),
+            );
+          }
+        )],
       ),
       body: SingleChildScrollView(
         child: Container(
