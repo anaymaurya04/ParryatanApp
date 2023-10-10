@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/drawer.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class About extends StatelessWidget {
   const About({super.key});
+   
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +108,7 @@ class About extends StatelessWidget {
           // Text
           const Expanded(
             child: Text(
-              "Team Parryatan",
+              "Anay Maurya",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -113,6 +116,25 @@ class About extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Image.asset('lib/icons/github.png'), // Replace with your GitHub icon
+                onPressed: () {
+                  // Add your GitHub profile URL here
+                  ("https://github.com/anaymaurya04");
+                },
+              ),
+              IconButton(
+                icon: Image.asset('lib/icons/linkedin-logo.png'), // Replace with your LinkedIn icon
+                onPressed: () {
+                  // Add your LinkedIn profile URL here
+                  ("https://www.linkedin.com/in/yourlinkedinprofile");
+                },
+              ),
+            ],
           ),
         ],
       ),
@@ -152,7 +174,7 @@ class About extends StatelessWidget {
           // Text
           const Expanded(
             child: Text(
-              "Team Parryatan",
+              "Shujaat Haider",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -160,6 +182,25 @@ class About extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Image.asset('lib/icons/github.png'), // Replace with your GitHub icon
+                onPressed: () {
+                  // Add your GitHub profile URL here
+                  ("https://github.com/yourgithub");
+                },
+              ),
+              IconButton(
+                icon: Image.asset('lib/icons/linkedin-logo.png'), // Replace with your LinkedIn icon
+                onPressed: () {
+                  // Add your LinkedIn profile URL here
+                  ("https://www.linkedin.com/in/yourlinkedinprofile");
+                },
+              ),
+            ],
           ),
         ],
       ),
@@ -199,7 +240,7 @@ class About extends StatelessWidget {
           // Text
           const Expanded(
             child: Text(
-              "Team Parryatan",
+              "Ali Zain",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -207,6 +248,25 @@ class About extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Image.asset('lib/icons/github.png'), // Replace with your GitHub icon
+                onPressed: () {
+                  // Add your GitHub profile URL here
+                  ("https://github.com/yourgithub");
+                },
+              ),
+              IconButton(
+                icon: Image.asset('lib/icons/linkedin-logo.png'), // Replace with your LinkedIn icon
+                onPressed: () {
+                  // Add your LinkedIn profile URL here
+                  ("https://www.linkedin.com/in/yourlinkedinprofile");
+                },
+              ),
+            ],
           ),
         ],
       ),
@@ -243,7 +303,7 @@ class About extends StatelessWidget {
           // Text
           const Expanded(
             child: Text(
-              "Team Parryatan",
+              "Harsh Verma",
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 18,
@@ -251,6 +311,25 @@ class About extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                icon: Image.asset('lib/icons/github.png'), // Replace with your GitHub icon
+                onPressed: () {
+                  // Add your GitHub profile URL here
+                  ("https://github.com/yourgithub");
+                },
+              ),
+              IconButton(
+                icon: Image.asset('lib/icons/linkedin-logo.png'), // Replace with your LinkedIn icon
+                onPressed: () {
+                  // Add your LinkedIn profile URL here
+                  ("https://www.linkedin.com/in/yourlinkedinprofile");
+                },
+              ),
+            ],
           ),
         ],
       ),
