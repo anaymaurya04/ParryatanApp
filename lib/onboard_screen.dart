@@ -34,7 +34,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             pages: [
               Container(
                 width: double.infinity,
-                color: Color.fromARGB(255, 34, 35, 58),
+                color: const Color.fromARGB(255, 34, 35, 58),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
@@ -265,7 +265,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               ),
               Container(
                 width: double.infinity,
-                color: Color.fromARGB(255, 34, 35, 58),
+                color: const Color.fromARGB(255, 34, 35, 58),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,

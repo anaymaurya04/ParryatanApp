@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/main.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
 
 class Monupage extends StatelessWidget {
