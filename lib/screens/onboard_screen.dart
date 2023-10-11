@@ -134,7 +134,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           child: TextButton(
                             onPressed: () {
                               requestCameraPermission();
-                              Navigator.push(context,
+                              Navigator.pushReplacement(context,
                                   MaterialPageRoute(builder: (context) {
                                 return const LoginPage();
                               }));
@@ -338,7 +338,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         ),
                         child: ElevatedButton(
                           onPressed: () {
-                            Navigator.push(context,
+                            Navigator.pushReplacement(context,
                                 MaterialPageRoute(builder: (context) {
                               return const LoginPage();
                             }));

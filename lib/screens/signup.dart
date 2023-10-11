@@ -30,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
                       return const MyHomePage();
                     }));
@@ -227,7 +227,12 @@ class _SignupPageState extends State<SignupPage> {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MyHomePage();
+                          }));
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.transparent,
                           elevation: 0,
@@ -251,7 +256,7 @@ class _SignupPageState extends State<SignupPage> {
                       opacity: 0.5,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(context,
+                          Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
                             return const LoginPage();
                           }));

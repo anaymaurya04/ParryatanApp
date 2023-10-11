@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
                       return const MyHomePage();
                     }));
@@ -210,7 +210,7 @@ class _LoginPageState extends State<LoginPage> {
                       opacity: 0.5,
                       child: TextButton(
                         onPressed: () {
-                          Navigator.push(context,
+                          Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
                             return const SignupPage();
                           }));
