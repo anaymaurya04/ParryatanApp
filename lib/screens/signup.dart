@@ -30,7 +30,10 @@ class _SignupPageState extends State<SignupPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const MyHomePage();
+                    }));
                   },
                   child: const Text(
                     'Skip',
@@ -224,7 +227,12 @@ class _SignupPageState extends State<SignupPage> {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const MyHomePage();
+                          }));
+                        },
                         style: ElevatedButton.styleFrom(
                           primary: Colors.transparent,
                           elevation: 0,
@@ -247,8 +255,11 @@ class _SignupPageState extends State<SignupPage> {
                     Opacity(
                       opacity: 0.5,
                       child: TextButton(
-                        onPressed: () { 
-                          Navigator.pop(context);
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const LoginPage();
+                          }));
                         },
                         child: const Text(
                           'Already Registed? Login',

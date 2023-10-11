@@ -8,20 +8,26 @@ class Settings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: gskin,
-      drawer: DrawerW(),
+      backgroundColor: gskin,
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: Builder(builder: (context) {
-            return IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: Image.asset('lib/icons/hamburger.png'),
-            );
-          }),
-        ),)
+        toolbarHeight: 70,
+        leading: IconButton(
+          icon: Image.asset('lib/icons/arrow-left.png'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        centerTitle: true,
+        title: const Text(
+          'Settings',
+          style: TextStyle(
+            fontFamily: "Nexa-Trial-Regular",
+            fontSize: 20,
+            color: gblack,
+          ),
+        ),
+        elevation: 0.0,
+      ),
     );
   }
 }
