@@ -71,6 +71,16 @@ class About extends StatelessWidget {
                     textAlign: TextAlign.justify,
                   ),
                   const SizedBox(height: 20), // Add more space
+                  const Text(
+                    "Meet The Team",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontFamily: "Nexa-Trial-Regular",
+                      fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.justify,
+                  ),
+                  const SizedBox(height: 20),
                   Column(
                     children: [
                       // First Box with Image
@@ -92,8 +102,8 @@ class About extends StatelessWidget {
                           children: [
                             // Profile Image in a Circle
                             Container(
-                              width: 50,
-                              height: 50,
+                              width: 60,
+                              height: 60,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -172,8 +182,8 @@ class About extends StatelessWidget {
                           children: [
                             // Profile Image in a Circle
                             Container(
-                              width: 50,
-                              height: 50,
+                              width: 60,
+                              height: 60,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -208,7 +218,7 @@ class About extends StatelessWidget {
                                     // Add your GitHub profile URL here
                                     launchUrl(
                                         Uri.parse(
-                                            "https://github.com/anaymaurya04"),
+                                            "https://github.com/sshrizvi"),
                                         mode: LaunchMode.externalApplication);
                                   },
                                 ),
@@ -219,7 +229,7 @@ class About extends StatelessWidget {
                                     // Add your LinkedIn profile URL here
                                     launchUrl(
                                         Uri.parse(
-                                            "https://github.com/anaymaurya04"),
+                                            "https://www.linkedin.com/in/syed-shujaat-haider-6648941b6/"),
                                         mode: LaunchMode.externalApplication);
                                   },
                                 ),
@@ -252,8 +262,8 @@ class About extends StatelessWidget {
                           children: [
                             // Profile Image in a Circle
                             Container(
-                              width: 50,
-                              height: 50,
+                              width: 60,
+                              height: 60,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -330,8 +340,8 @@ class About extends StatelessWidget {
                           children: [
                             // Profile Image in a Circle
                             Container(
-                              width: 50,
-                              height: 50,
+                              width: 60,
+                              height: 60,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
