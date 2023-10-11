@@ -30,10 +30,7 @@ class _SignupPageState extends State<SignupPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const MyHomePage();
-                    }));
+                    Navigator.pop(context);
                   },
                   child: const Text(
                     'Skip',
@@ -250,11 +247,8 @@ class _SignupPageState extends State<SignupPage> {
                     Opacity(
                       opacity: 0.5,
                       child: TextButton(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const LoginPage();
-                          }));
+                        onPressed: () { 
+                          Navigator.pop(context);
                         },
                         child: const Text(
                           'Already Registed? Login',

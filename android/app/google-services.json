@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "743506076698",
+    "firebase_url": "https://parryatan-e7d27-default-rtdb.firebaseio.com",
+    "project_id": "parryatan-e7d27",
+    "storage_bucket": "parryatan-e7d27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743506076698:android:26276c7a427b66fe80dda3",
+        "android_client_info": {
+          "package_name": "com.example.test_scanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtzJna5eNflzs1632S5UhP3QCWtgvRehE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743506076698:android:9537c6b32ca91fa480dda3",
+        "android_client_info": {
+          "package_name": "com.example.test_scanner1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtzJna5eNflzs1632S5UhP3QCWtgvRehE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
