@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/drawer.dart';
+import 'package:test_scanner/screens/drawer.dart';
 
-class Acc extends StatelessWidget {
-  const Acc({super.key});
+class Settings extends StatelessWidget {
+  const Settings({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      backgroundColor: gskin,
+    return Scaffold(
+       backgroundColor: gskin,
       drawer: DrawerW(),
       appBar: AppBar(
         leading: Padding(

@@ -1,7 +1,8 @@
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:test_scanner/login.dart';
+import 'package:test_scanner/screens/homepage.dart';
+import 'package:test_scanner/screens/login.dart';
 import 'package:test_scanner/main.dart';
 import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';

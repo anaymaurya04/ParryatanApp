@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:test_scanner/about.dart';
-import 'package:test_scanner/account.dart';
+import 'package:test_scanner/screens/about.dart';
+import 'package:test_scanner/screens/account.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/main.dart';
-import 'package:test_scanner/settings.dart';
+import 'package:test_scanner/screens/homepage.dart';
+import 'package:test_scanner/screens/settings.dart';
 class DrawerList extends StatefulWidget {
   
 

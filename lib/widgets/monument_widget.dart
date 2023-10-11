@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/main.dart';
+import 'package:test_scanner/screens/homepage.dart';
 
 class MonumentWidget extends StatelessWidget {
   final String title;

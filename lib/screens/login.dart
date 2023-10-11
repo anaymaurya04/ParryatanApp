@@ -4,7 +4,8 @@ import 'package:flutter/widgets.dart';
 import 'package:test_scanner/main.dart';
 import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/signup.dart';
+import 'package:test_scanner/screens/homepage.dart';
+import 'package:test_scanner/screens/signup.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key});
