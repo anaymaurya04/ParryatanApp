@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/screens/homepage.dart';
+import 'package:flutter_tts/flutter_tts.dart';
+import 'package:translator/translator.dart';
 
-class MonumentWidget extends StatelessWidget {
+class MonumentWidget extends StatefulWidget {
   final String title;
   final String imageAsset;
   final String content;
@@ -13,6 +15,52 @@ class MonumentWidget extends StatelessWidget {
     required this.imageAsset,
     required this.content,
   }) : super(key: key);
+
+  @override
+  State<MonumentWidget> createState() => _MonumentWidgetState();
+}
+
+class _MonumentWidgetState extends State<MonumentWidget> {
+  FlutterTts flutterTts = FlutterTts();
+
+  @override
+  void initState() {
+    super.initState();
+    _initTts();
+  }
+
+  Future<void> _initTts() async {
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setPitch(1);
+    await flutterTts.setSpeechRate(0.3);
+  }
+
+  Future<void> _speak(String text) async {
+    await flutterTts.setVolume(1.0);
+    await flutterTts.speak(text);
+  }
+
+  String translatedText = " ";
+  Future<String> tts(String text) async {
+    translatedText = await translate(widget.content, to: "ar");
+    return translatedText;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
+  }
+
+  Future<String> translate(String text, {String to = 'en'}) async {
+    final translator = GoogleTranslator();
+
+    // Translate the text
+    Translation translation = await translator.translate(text, to: to);
+
+    // Return the translated text
+    return translation.text;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +78,7 @@ class MonumentWidget extends StatelessWidget {
         ),
         centerTitle: true,
         title: Text(
-          title,
+          widget.title,
           style: const TextStyle(
             fontFamily: "Nexa-Trial-Regular",
             fontSize: 20,
@@ -53,7 +101,7 @@ class MonumentWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   clipBehavior: Clip.hardEdge,
                   child: Image.asset(
-                    imageAsset,
+                    widget.imageAsset,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -75,7 +123,7 @@ class MonumentWidget extends StatelessWidget {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Text(
-                          content,
+                          translatedText,
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
                             fontSize: 17,
@@ -91,13 +139,17 @@ class MonumentWidget extends StatelessWidget {
           ),
         ),
       ),
-       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Implement the text-to-speech action here
-          // You can use the flutter_tts package for text-to-speech.
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          String translatedText = await tts(widget.content);
+          setState(() {
+            this.translatedText = translatedText;
+          });
+          _speak(translatedText);
         },
         backgroundColor: gblack,
-        child: const Icon(Icons.speaker, size: 36.0), // Change the color to your preference
+        child: const Icon(Icons.speaker,
+            size: 36.0), // Change the color to your preference
       ),
     );
   }

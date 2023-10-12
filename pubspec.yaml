@@ -20,6 +20,8 @@ dependencies:
   firebase_core: ^2.17.0
   cloud_firestore: ^4.9.3
   flutter_tts: ^3.8.3
+  translator: ^0.1.7
+  easy_localization: ^3.0.3
   
 
 
