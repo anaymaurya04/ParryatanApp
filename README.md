@@ -1,4 +1,4 @@
-# Parryatan - Your Travel Companion App
+# Parryatan 
 
 Parryatan is a mobile application developed using Flutter, designed to enhance the travel experience for tourists and travelers visiting monuments and tourist attractions. This app leverages various features such as QR code scanning, text-to-speech functionality, translation, and recommendations for local delicacies and affordable hotels. 
 
