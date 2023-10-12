@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/homepage.dart';
 
-class MonumentWidget extends StatelessWidget {
+
+class MonumentWidget extends StatefulWidget {
   final String title;
   final String imageAsset;
   final String content;
@@ -15,6 +16,46 @@ class MonumentWidget extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<MonumentWidget> createState() => _MonumentWidgetState();
+}
+
+class _MonumentWidgetState extends State<MonumentWidget> {
+  FlutterTts flutterTts = FlutterTts();
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+    initTts();
+  }
+
+  Future initTts() async {
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(1.0);
+    await flutterTts.setSpeechRate(1.0);
+    flutterTts.setCompletionHandler(() {
+      setState(() {
+        isPlaying = false;
+      });
+    });
+  }
+
+  Future<void> _speak(String text, String language) async {
+    if (isPlaying) {
+      await flutterTts.stop();
+      setState(() {
+        isPlaying = false;
+      });
+    } else {
+      await flutterTts.setLanguage(language);
+      await flutterTts.speak(text);
+      setState(() {
+        isPlaying = true;
+      });
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gskin,
@@ -23,14 +64,12 @@ class MonumentWidget extends StatelessWidget {
         leading: IconButton(
           icon: Image.asset('lib/icons/arrow-left.png'),
           onPressed: () {
-            Navigator.pop(context, MaterialPageRoute(builder: (context) {
-              return const MyHomePage();
-            }));
+            Navigator.pop(context);
           },
         ),
         centerTitle: true,
         title: Text(
-          title,
+          widget.title,
           style: const TextStyle(
             fontFamily: "Nexa-Trial-Regular",
             fontSize: 20,
@@ -53,7 +92,7 @@ class MonumentWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   clipBehavior: Clip.hardEdge,
                   child: Image.asset(
-                    imageAsset,
+                    widget.imageAsset,
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -75,7 +114,7 @@ class MonumentWidget extends StatelessWidget {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Text(
-                          content,
+                          widget.content,
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
                             fontSize: 17,
@@ -91,13 +130,12 @@ class MonumentWidget extends StatelessWidget {
           ),
         ),
       ),
-       floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Implement the text-to-speech action here
-          // You can use the flutter_tts package for text-to-speech.
+          _speak(widget.content, "en-US"); // Toggle between play and pause
         },
         backgroundColor: gblack,
-        child: const Icon(Icons.speaker, size: 36.0), // Change the color to your preference
+        child: Icon(isPlaying ? Icons.pause : Icons.play_arrow, size: 36.0),
       ),
     );
   }
