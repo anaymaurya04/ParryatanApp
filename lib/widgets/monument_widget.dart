@@ -69,7 +69,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
 
   Future<void> _speak(String text) async {
     if (isPlaying) {
-      await flutterTts.stop();
+      await flutterTts.pause();
     } else {
       await flutterTts.setVolume(1.0);
       await flutterTts.speak(text);
