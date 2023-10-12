@@ -24,8 +24,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
 
-  String selectedLanguageCode = 'hi'; // Default language code, e.g., Hindi
-
+  String selectedLanguageCode = 'en'; // Default language code, e.g., Hindi
 
   @override
   void initState() {
@@ -38,23 +37,22 @@ class _MonumentWidgetState extends State<MonumentWidget> {
     await flutterTts.setLanguage("en-IN");
     await flutterTts.setPitch(1);
     await flutterTts.setSpeechRate(0.3);
-     flutterTts.setCompletionHandler(() {
+    flutterTts.setCompletionHandler(() {
       setState(() {
         isPlaying = false;
       });
     });
   }
+
   String translatedText = " ";
   void defaultText() {
-    if (translatedText.isEmpty) {
+    if (translatedText == " ") {
       translatedText = widget.content;
     }
   }
 
   Future<String> tts(String text) async {
-
     translatedText = await translate(widget.content, to: selectedLanguageCode);
-
 
     return translatedText;
   }
@@ -71,7 +69,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
 
   Future<void> _speak(String text) async {
     if (isPlaying) {
-      await flutterTts.stop();
+      await flutterTts.pause();
     } else {
       await flutterTts.setVolume(1.0);
       await flutterTts.speak(text);
@@ -194,7 +192,11 @@ class _MonumentWidgetState extends State<MonumentWidget> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
+          String translatedText = await tts(widget.content);
+          setState(() {
+            this.translatedText = translatedText;
+          });
           _speak(translatedText);
         },
         backgroundColor: gblack,
