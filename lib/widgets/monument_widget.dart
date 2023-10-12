@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:test_scanner/color/color.dart';
-
-
+import 'package:test_scanner/screens/homepage.dart';
+import 'package:translator/translator.dart'
 class MonumentWidget extends StatefulWidget {
   final String title;
   final String imageAsset;
@@ -23,36 +23,46 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
 
+
   @override
   void initState() {
     super.initState();
-    initTts();
+
+    _initTts();
   }
 
-  Future initTts() async {
-    await flutterTts.setLanguage("en-US");
-    await flutterTts.setPitch(1.0);
-    await flutterTts.setSpeechRate(1.0);
-    flutterTts.setCompletionHandler(() {
-      setState(() {
-        isPlaying = false;
-      });
-    });
+  Future<void> _initTts() async {
+    await flutterTts.setLanguage("en-IN");
+    await flutterTts.setPitch(1);
+    await flutterTts.setSpeechRate(0.3);
   }
 
-  Future<void> _speak(String text, String language) async {
-    if (isPlaying) {
-      await flutterTts.stop();
-      setState(() {
-        isPlaying = false;
-      });
-    } else {
-      await flutterTts.setLanguage(language);
-      await flutterTts.speak(text);
-      setState(() {
-        isPlaying = true;
-      });
-    }
+  Future<void> _speak(String text) async {
+    await flutterTts.setVolume(1.0);
+    await flutterTts.speak(text);
+  }
+
+  String translatedText = " ";
+  Future<String> tts(String text) async {
+    translatedText = await translate(widget.content, to: "ar");
+    return translatedText;
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
+  }
+
+  Future<String> translate(String text, {String to = 'en'}) async {
+    final translator = GoogleTranslator();
+
+    // Translate the text
+    Translation translation = await translator.translate(text, to: to);
+
+    // Return the translated text
+    return translation.text;
+
   }
 
   @override
@@ -114,7 +124,10 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Text(
-                          widget.content,
+
+                          translatedText,
+
+                       
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
                             fontSize: 17,
@@ -131,11 +144,16 @@ class _MonumentWidgetState extends State<MonumentWidget> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _speak(widget.content, "en-US"); // Toggle between play and pause
+        onPressed: () async {
+          String translatedText = await tts(widget.content);
+          setState(() {
+            this.translatedText = translatedText;
+          });
+          _speak(translatedText);
         },
         backgroundColor: gblack,
         child: Icon(isPlaying ? Icons.pause : Icons.play_arrow, size: 36.0),
+        
       ),
     );
   }
