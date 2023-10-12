@@ -27,6 +27,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   void initState() {
     super.initState();
     _initTts();
+    defaulttext();
   }
 
   Future<void> _initTts() async {
@@ -41,8 +42,14 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   }
 
   String translatedText = " ";
+  void defaulttext() {
+    if (translatedText == " ") {
+      translatedText = widget.content;
+    }
+  }
+
   Future<String> tts(String text) async {
-    translatedText = await translate(widget.content, to: "ar");
+    translatedText = await translate(widget.content, to: "hi");
     return translatedText;
   }
 
