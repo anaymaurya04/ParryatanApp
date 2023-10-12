@@ -23,6 +23,7 @@ class MonumentWidget extends StatefulWidget {
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
+  String selectedLanguageCode = 'hi'; // Default language code, e.g., Hindi
 
   @override
   void initState() {
@@ -51,7 +52,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   }
 
   Future<String> tts(String text) async {
-    translatedText = await translate(widget.content, to: "hi");
+    translatedText = await translate(widget.content, to: selectedLanguageCode);
     return translatedText;
   }
 
@@ -140,6 +141,36 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: DropdownButton<String>(
+                  value: selectedLanguageCode,
+                  items: const [
+                    DropdownMenuItem(
+                      child: Text('English'),
+                      value: 'en',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Hindi'),
+                      value: 'hi',
+                    ),
+                    // Add more languages as needed
+                    DropdownMenuItem(
+                      child: Text('French'),
+                      value: 'fr',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Arabic'),
+                      value: 'ar',
+                    ),
+                  ],
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedLanguageCode = newValue!;
+                    });
+                  },
                 ),
               ),
             ],
