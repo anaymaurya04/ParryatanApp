@@ -84,10 +84,10 @@ To use Parryatan, follow these steps:
   <p style="background-color: #F4F4F4; padding: 20px; border-radius: 10px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
-        <img src="https://github.com/JohnDoe.png" alt="John Doe" width="100" style="border-radius: 50%;">
-        <h4>John Doe</h4>
-        <p>Lead Developer</p>
-        <a href="https://github.com/JohnDoe">
+        <img src="https://github.com/anaymaurya04.png" alt="Anay Maurya" width="100" style="border-radius: 50%;">
+        <h4>Anay Maurya</h4>
+        <p>Team Leaderr</p>
+        <a href="https://github.com/anaymaurya04">
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
