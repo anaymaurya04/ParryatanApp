@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:test_scanner/screens/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import 'widgets/firebase_options.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

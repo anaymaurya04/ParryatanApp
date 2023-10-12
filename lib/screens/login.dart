@@ -7,7 +7,9 @@ import 'package:test_scanner/screens/homepage.dart';
 import 'package:test_scanner/screens/signup.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key});
+  const LoginPage({super.key});
+
+
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -187,7 +189,7 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.transparent,
+                          backgroundColor: Colors.transparent,
                           elevation: 0,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 25.0,

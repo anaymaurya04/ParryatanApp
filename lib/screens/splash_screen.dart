@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
           Center(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(25),
-              child: Container(
+              child: SizedBox(
                 height: 80,
                 width: 80,
                 child: Image.asset(

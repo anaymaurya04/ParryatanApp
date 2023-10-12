@@ -3,7 +3,6 @@ import 'package:liquid_swipe/liquid_swipe.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/screens/login.dart';
 import 'package:test_scanner/main.dart';
-import 'package:flutter/painting.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -344,7 +343,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             }));
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Colors
+                            backgroundColor: Colors
                                 .transparent, // Make the button transparent
                             elevation: 0, // Remove button elevation
                             padding: const EdgeInsets.symmetric(

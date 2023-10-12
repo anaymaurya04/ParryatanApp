@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:flutter/services.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/monu_page.dart';
-import 'package:test_scanner/screens/login.dart';
 import 'package:test_scanner/screens/drawer.dart';
 import 'package:test_scanner/main.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
@@ -181,30 +179,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               color: glight)),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const Monupage();
-                          }));
-                        },
-                        child: const Text("Blog page"),
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.bottomRight,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const LoginPage();
-                          }));
-                        },
-                        child: const Text("Login Screen"),
-                      ),
                     ),
                   ])),
         ),
