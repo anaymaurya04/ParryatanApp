@@ -20,6 +20,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String? result;
   String? temp = "Anay";
+  void navigateToMonument(BuildContext context, String title, String imageAsset, String content) {
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+    return MonumentWidget(
+      title: title,
+      imageAsset: imageAsset,
+      content: content,
+    );
+  }));
+}
+
 
   Future _scanQR() async {
     try {
@@ -40,13 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
             String content = monumentData['content'];
 
             // Navigate to the monument page with the fetched data
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return MonumentWidget(
-                title: title,
-                imageAsset: imageAsset,
-                content: content,
-              );
-            }));
+            navigateToMonument(context, title, imageAsset, content);
+
           } else {
             // Handle case where the monument data doesn't exist
           }
@@ -67,19 +72,35 @@ class _MyHomePageState extends State<MyHomePage> {
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: const Text('Alert'),
-                content: Text('Do you want to exit'),
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),),
+                backgroundColor: gblack,
+                title: const Text('Alert',
+                style: TextStyle( color: gskin),),
+                content: const Text('Do you want to exit', style: TextStyle( color: gskin),),
                 actions: [
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(false);
                       },
-                      child: const Text('No')),
+                      style: ElevatedButton.styleFrom(
+                    backgroundColor: gblack, // Set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0), // Adjust the radius for button rounding
+                    ),
+                  ),
+                      child: const Text('No', style: TextStyle( color: gskin),),),
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       },
-                      child: const Text('Exit'))
+                        style: ElevatedButton.styleFrom(
+                    backgroundColor: gblack, // Set the button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0), // Adjust the radius for button rounding
+                    ),
+                  ),
+                      child: const Text('Exit', style: TextStyle( color: gskin),))
                 ],
               );
             });

@@ -7,11 +7,9 @@ class DrawerW extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return const Drawer(
       child: SingleChildScrollView(
-        child: Container(
-          child: const Column(children: [DrawHead(), DrawerList()]),
-        ),
+        child: Column(children: [DrawHead(), DrawerList()]),
       ),
     );
   }
