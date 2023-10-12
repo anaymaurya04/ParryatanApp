@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/screens/homepage.dart';
-import 'package:flutter_tts/flutter_tts.dart';
-import 'package:translator/translator.dart';
-
+import 'package:translator/translator.dart'
 class MonumentWidget extends StatefulWidget {
   final String title;
   final String imageAsset;
@@ -22,10 +21,13 @@ class MonumentWidget extends StatefulWidget {
 
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
+  bool isPlaying = false;
+
 
   @override
   void initState() {
     super.initState();
+
     _initTts();
   }
 
@@ -60,6 +62,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
 
     // Return the translated text
     return translation.text;
+
   }
 
   @override
@@ -71,9 +74,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
         leading: IconButton(
           icon: Image.asset('lib/icons/arrow-left.png'),
           onPressed: () {
-            Navigator.pop(context, MaterialPageRoute(builder: (context) {
-              return const MyHomePage();
-            }));
+            Navigator.pop(context);
           },
         ),
         centerTitle: true,
@@ -123,7 +124,10 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.vertical,
                         child: Text(
+
                           translatedText,
+
+                       
                           textAlign: TextAlign.justify,
                           style: const TextStyle(
                             fontSize: 17,
@@ -148,8 +152,8 @@ class _MonumentWidgetState extends State<MonumentWidget> {
           _speak(translatedText);
         },
         backgroundColor: gblack,
-        child: const Icon(Icons.speaker,
-            size: 36.0), // Change the color to your preference
+        child: Icon(isPlaying ? Icons.pause : Icons.play_arrow, size: 36.0),
+        
       ),
     );
   }
