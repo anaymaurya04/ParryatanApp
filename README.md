@@ -79,7 +79,7 @@ To use Parryatan, follow these steps:
 - Enjoy an enhanced travel experience!
 
 ## Meet the Team
-```html
+
 <div align="center">
   <p style="background-color: #F4F4F4; padding: 20px; border-radius: 10px;">
     <div style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -121,6 +121,6 @@ To use Parryatan, follow these steps:
     </div>
   </p>
 </div>
-```
+
 
 Happy traveling with Parryatan! 🌍🗺️📱
