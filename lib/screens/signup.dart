@@ -1,6 +1,5 @@
 // ignore_for_file: unused_import
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:test_scanner/screens/homepage.dart';
 import 'package:test_scanner/screens/login.dart';
 import 'package:test_scanner/main.dart';
@@ -8,7 +7,8 @@ import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';
 
 class SignupPage extends StatefulWidget {
-  const SignupPage({Key? key});
+  const SignupPage({super.key});
+
 
   @override
   State<SignupPage> createState() => _SignupPageState();
@@ -234,7 +234,7 @@ class _SignupPageState extends State<SignupPage> {
                           }));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.transparent,
+                          backgroundColor: Colors.transparent,
                           elevation: 0,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 25.0,

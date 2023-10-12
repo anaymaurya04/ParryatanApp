@@ -91,6 +91,14 @@ class MonumentWidget extends StatelessWidget {
           ),
         ),
       ),
+       floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Implement the text-to-speech action here
+          // You can use the flutter_tts package for text-to-speech.
+        },
+        backgroundColor: gblack,
+        child: const Icon(Icons.speaker, size: 36.0), // Change the color to your preference
+      ),
     );
   }
 }
