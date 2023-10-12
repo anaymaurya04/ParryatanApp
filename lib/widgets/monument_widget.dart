@@ -23,43 +23,40 @@ class MonumentWidget extends StatefulWidget {
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
+
   String selectedLanguageCode = 'hi'; // Default language code, e.g., Hindi
+
 
   @override
   void initState() {
     super.initState();
-
     _initTts();
-    defaulttext();
+    defaultText();
   }
 
   Future<void> _initTts() async {
     await flutterTts.setLanguage("en-IN");
     await flutterTts.setPitch(1);
     await flutterTts.setSpeechRate(0.3);
+     flutterTts.setCompletionHandler(() {
+      setState(() {
+        isPlaying = false;
+      });
+    });
   }
-
-  Future<void> _speak(String text) async {
-    await flutterTts.setVolume(1.0);
-    await flutterTts.speak(text);
-  }
-
   String translatedText = " ";
-  void defaulttext() {
-    if (translatedText == " ") {
+  void defaultText() {
+    if (translatedText.isEmpty) {
       translatedText = widget.content;
     }
   }
 
   Future<String> tts(String text) async {
-    translatedText = await translate(widget.content, to: selectedLanguageCode);
-    return translatedText;
-  }
 
-  @override
-  void dispose() {
-    super.dispose();
-    flutterTts.stop();
+    translatedText = await translate(widget.content, to: selectedLanguageCode);
+
+
+    return translatedText;
   }
 
   Future<String> translate(String text, {String to = 'en'}) async {
@@ -70,6 +67,25 @@ class _MonumentWidgetState extends State<MonumentWidget> {
 
     // Return the translated text
     return translation.text;
+  }
+
+  Future<void> _speak(String text) async {
+    if (isPlaying) {
+      await flutterTts.stop();
+    } else {
+      await flutterTts.setVolume(1.0);
+      await flutterTts.speak(text);
+    }
+
+    setState(() {
+      isPlaying = !isPlaying;
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
   }
 
   @override
@@ -178,11 +194,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          String translatedText = await tts(widget.content);
-          setState(() {
-            this.translatedText = translatedText;
-          });
+        onPressed: () {
           _speak(translatedText);
         },
         backgroundColor: gblack,
