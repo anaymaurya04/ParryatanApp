@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/drawer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class About extends StatelessWidget {

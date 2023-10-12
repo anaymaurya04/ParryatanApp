@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/drawer.dart';
-import 'package:test_scanner/screens/homepage.dart';
 
 class Acc extends StatelessWidget {
   const Acc({super.key});
