@@ -24,41 +24,37 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
 
+  String selectedLanguageCode = 'en'; // Default language code, e.g., Hindi
+
   @override
   void initState() {
     super.initState();
-
     _initTts();
-    defaulttext();
+    defaultText();
   }
 
   Future<void> _initTts() async {
     await flutterTts.setLanguage("en-IN");
     await flutterTts.setPitch(1);
     await flutterTts.setSpeechRate(0.3);
-  }
-
-  Future<void> _speak(String text) async {
-    await flutterTts.setVolume(1.0);
-    await flutterTts.speak(text);
+    flutterTts.setCompletionHandler(() {
+      setState(() {
+        isPlaying = false;
+      });
+    });
   }
 
   String translatedText = " ";
-  void defaulttext() {
+  void defaultText() {
     if (translatedText == " ") {
       translatedText = widget.content;
     }
   }
 
   Future<String> tts(String text) async {
-    translatedText = await translate(widget.content, to: "hi");
-    return translatedText;
-  }
+    translatedText = await translate(widget.content, to: selectedLanguageCode);
 
-  @override
-  void dispose() {
-    super.dispose();
-    flutterTts.stop();
+    return translatedText;
   }
 
   Future<String> translate(String text, {String to = 'en'}) async {
@@ -69,6 +65,25 @@ class _MonumentWidgetState extends State<MonumentWidget> {
 
     // Return the translated text
     return translation.text;
+  }
+
+  Future<void> _speak(String text) async {
+    if (isPlaying) {
+      await flutterTts.stop();
+    } else {
+      await flutterTts.setVolume(1.0);
+      await flutterTts.speak(text);
+    }
+
+    setState(() {
+      isPlaying = !isPlaying;
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    flutterTts.stop();
   }
 
   @override
@@ -140,6 +155,36 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                       ),
                     ),
                   ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: DropdownButton<String>(
+                  value: selectedLanguageCode,
+                  items: const [
+                    DropdownMenuItem(
+                      child: Text('English'),
+                      value: 'en',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Hindi'),
+                      value: 'hi',
+                    ),
+                    // Add more languages as needed
+                    DropdownMenuItem(
+                      child: Text('French'),
+                      value: 'fr',
+                    ),
+                    DropdownMenuItem(
+                      child: Text('Arabic'),
+                      value: 'ar',
+                    ),
+                  ],
+                  onChanged: (String? newValue) {
+                    setState(() {
+                      selectedLanguageCode = newValue!;
+                    });
+                  },
                 ),
               ),
             ],
