@@ -91,30 +91,27 @@ To use Parryatan, follow these steps:
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
-
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
-        <img src="https://github.com/JaneSmith.png" alt="Jane Smith" width="100" style="border-radius: 50%;">
-        <h4>Jane Smith</h4>
-        <p>UI/UX Designer</p>
-        <a href="https://github.com/JaneSmith">
+        <img src="https://github.com/sshrizvi.png" alt="Shujaat Haider" width="100" style="border-radius: 50%;">
+        <h4>Shujaat Haider</h4>
+        <p>UI Magician</p>
+        <a href="https://github.com/sshrizvi">
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
-
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
-        <img src="https://github.com/MarkJohnson.png" alt="Mark Johnson" width="100" style="border-radius: 50%;">
-        <h4>Mark Johnson</h4>
-        <p>Backend Developer</p>
-        <a href="https://github.com/MarkJohnson">
+        <img src="https://github.com/itsmezain.png" alt="Mark Johnson" width="100" style="border-radius: 50%;">
+        <h4>Ali Zain</h4>
+        <p>Backend Artist</p>
+        <a href="https://github.com/itsmezain">
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
-
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
-        <img src="https://github.com/SaraDavis.png" alt="Sara Davis" width="100" style="border-radius: 50%;">
-        <h4>Sara Davis</h4>
-        <p>Quality Assurance Tester</p>
-        <a href="https://github.com/SaraDavis">
+        <img src="https://github.com/harsh6388.png" alt="Harsh Verma" width="100" style="border-radius: 50%;">
+        <h4>Harsh Verma</h4>
+        <p>Problem Solver</p>
+        <a href="https://github.com/harsh6388">
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
