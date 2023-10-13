@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:flutter/services.dart';
 import 'package:test_scanner/color/color.dart';
+import 'package:test_scanner/screens/account.dart';
 import 'package:test_scanner/screens/drawer.dart';
 import 'package:test_scanner/main.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
@@ -18,16 +19,16 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String? result;
   String? temp = "Anay";
-  void navigateToMonument(BuildContext context, String title, String imageAsset, String content) {
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-    return MonumentWidget(
-      title: title,
-      imageAsset: imageAsset,
-      content: content,
-    );
-  }));
-}
-
+  void navigateToMonument(
+      BuildContext context, String title, String imageAsset, String content) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+      return MonumentWidget(
+        title: title,
+        imageAsset: imageAsset,
+        content: content,
+      );
+    }));
+  }
 
   Future _scanQR() async {
     try {
@@ -49,7 +50,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
             // Navigate to the monument page with the fetched data
             navigateToMonument(context, title, imageAsset, content);
-
           } else {
             // Handle case where the monument data doesn't exist
           }
@@ -71,34 +71,49 @@ class _MyHomePageState extends State<MyHomePage> {
             builder: (context) {
               return AlertDialog(
                 shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),),
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
                 backgroundColor: gblack,
-                title: const Text('Alert',
-                style: TextStyle( color: gskin),),
-                content: const Text('Do you want to exit', style: TextStyle( color: gskin),),
+                title: const Text(
+                  'Alert',
+                  style: TextStyle(color: gskin),
+                ),
+                content: const Text(
+                  'Do you want to exit',
+                  style: TextStyle(color: gskin),
+                ),
                 actions: [
                   ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop(false);
-                      },
-                      style: ElevatedButton.styleFrom(
-                    backgroundColor: gblack, // Set the button color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Adjust the radius for button rounding
+                    onPressed: () {
+                      Navigator.of(context).pop(false);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: gblack, // Set the button color
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(
+                            10.0), // Adjust the radius for button rounding
+                      ),
+                    ),
+                    child: const Text(
+                      'No',
+                      style: TextStyle(color: gskin),
                     ),
                   ),
-                      child: const Text('No', style: TextStyle( color: gskin),),),
                   ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       },
-                        style: ElevatedButton.styleFrom(
-                    backgroundColor: gblack, // Set the button color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0), // Adjust the radius for button rounding
-                    ),
-                  ),
-                      child: const Text('Exit', style: TextStyle( color: gskin),))
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: gblack, // Set the button color
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                              10.0), // Adjust the radius for button rounding
+                        ),
+                      ),
+                      child: const Text(
+                        'Exit',
+                        style: TextStyle(color: gskin),
+                      ))
                 ],
               );
             });
@@ -148,26 +163,27 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: SingleChildScrollView(
           child: Container(
-              height: 800,
+              height: 1000,
               width: double.infinity,
               padding: const EdgeInsets.all(16.0),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const Acc(); 
+                          }));
+                        },
                         child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: glight))),
-                    const SizedBox(
-                      height: 15,
-                      width: 15,
-                    ),
-                    Expanded(
-                      child: Container(
-                        decoration: BoxDecoration(
+                          decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25),
-                            color: glight),
+                            color: glight,
+                          ),
+                          child: Image.asset('lib/images/Explore.png',
+                              fit: BoxFit.fill),
+                        ),
                       ),
                     ),
                     const SizedBox(
@@ -175,17 +191,67 @@ class _MyHomePageState extends State<MyHomePage> {
                       width: 15,
                     ),
                     Expanded(
-                      child: Container(
+                      child: GestureDetector(
+                        onTap: () {
+                          // Your onPressed function goes here
+                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                        },
+                        child: Container(
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25),
-                              color: glight)),
+                            borderRadius: BorderRadius.circular(25),
+                            color: glight,
+                          ),
+                          child: Image.asset('lib/images/Food.png',
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          // Your onPressed function goes here
+                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: glight,
+                          ),
+                          child: Image.asset('lib/images/Hotels.png',
+                              fit: BoxFit.fill),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          // Your onPressed function goes here
+                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: glight,
+                          ),
+                          child: Image.asset('lib/images/Cab.png',
+                              fit: BoxFit.fill),
+                        ),
+                      ),
                     ),
                   ])),
         ),
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 15),
           child: FloatingActionButton.extended(
-              backgroundColor: gpurple,
+              backgroundColor: gblack,
               onPressed: () {
                 _scanQR(); // calling a function when user click on button
               },
