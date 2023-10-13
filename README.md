@@ -4,11 +4,11 @@ Parryatan is a mobile application developed using Flutter, designed to enhance t
 
 ## Table of Contents
 
- [Introduction](#introduction)
- [Features](#features)
- [Business Idea](#business-idea)
- [Installation](#installation)
- [Usage](#usage)
+- [Introduction](#introduction)
+- [Features](#features)
+- [Business Idea](#business-idea)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ## Introduction
 
