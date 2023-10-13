@@ -88,7 +88,7 @@ To use Parryatan, follow these steps:
         <h4>Anay Maurya</h4>
         <p>Team Leaderr</p>
         <a href="https://github.com/anaymaurya04">
-          <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
+          <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png"/>
         </a>
       </div>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
@@ -96,7 +96,7 @@ To use Parryatan, follow these steps:
         <h4>Shujaat Haider</h4>
         <p>UI Magician</p>
         <a href="https://github.com/sshrizvi">
-          <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
+          <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png"/>
         </a>
       </div>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
@@ -104,7 +104,7 @@ To use Parryatan, follow these steps:
         <h4>Ali Zain</h4>
         <p>Backend Artist</p>
         <a href="https://github.com/itsmezain">
-          <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
+          <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png"/>
         </a>
       </div>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
@@ -112,7 +112,7 @@ To use Parryatan, follow these steps:
         <h4>Harsh Verma</h4>
         <p>Problem Solver</p>
         <a href="https://github.com/harsh6388">
-          <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
+          <img src="https://img.icons8.com/material-outlined/24/ffffff/github.png"/>
         </a>
       </div>
     </div>
