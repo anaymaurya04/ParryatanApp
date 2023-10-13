@@ -308,7 +308,7 @@ class About extends StatelessWidget {
                                       // Add your LinkedIn profile URL here
                                       launchUrl(
                                           Uri.parse(
-                                              "https://github.com/anaymaurya04"),
+                                              "https://www.linkedin.com/in/ali-zain-838603295/"),
                                           mode: LaunchMode.externalApplication);
                                     },
                                   ),
@@ -375,7 +375,7 @@ class About extends StatelessWidget {
                                       // Add your GitHub profile URL here
                                       launchUrl(
                                           Uri.parse(
-                                              "https://github.com/anaymaurya04"),
+                                              "https://github.com/harsh6388"),
                                           mode: LaunchMode.externalApplication);
                                     },
                                   ),
@@ -385,7 +385,7 @@ class About extends StatelessWidget {
                                     onPressed: () {
                                       launchUrl(
                                           Uri.parse(
-                                              "https://github.com/anaymaurya04"),
+                                              "https://www.linkedin.com/in/syed-shujaat-haider-6648941b6/"),
                                           mode: LaunchMode.externalApplication);
                                     },
                                   ),
