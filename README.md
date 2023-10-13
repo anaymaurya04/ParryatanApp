@@ -90,6 +90,7 @@ To use Parryatan, follow these steps:
         <a href="https://github.com/anaymaurya04">
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
+         <br>
       </div>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
         <img src="https://github.com/sshrizvi.png" alt="Shujaat Haider" width="100" style="border-radius: 50%;">
@@ -99,6 +100,7 @@ To use Parryatan, follow these steps:
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
+       <br>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
         <img src="https://github.com/itsmezain.png" alt="Mark Johnson" width="100" style="border-radius: 50%;">
         <h4>Ali Zain</h4>
@@ -107,6 +109,7 @@ To use Parryatan, follow these steps:
           <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
         </a>
       </div>
+       <br>
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
         <img src="https://github.com/harsh6388.png" alt="Harsh Verma" width="100" style="border-radius: 50%;">
         <h4>Harsh Verma</h4>
