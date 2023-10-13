@@ -32,15 +32,12 @@ Parryatan caters to a global audience by providing real-time translation service
 
 The app takes your travel experience to the next level by recommending local delicacies and affordable hotels near the tourist attraction. These recommendations are designed to help you savor local flavors and find a comfortable place to stay without breaking the bank.
 
-## Business Idea
+## Business IdeaBusiness perspective of our app :
 
-The primary business idea behind Parryatan is to create a platform that caters to the needs of both tourists and local businesses. Here's how Parryatan can generate revenue:
-
-- **Monument Partnerships**: Collaborate with local authorities and monument owners to place QR codes and information about their attractions on the app. Charge a fee for this service, creating a new revenue stream.
-
-- **Advertising**: Partner with local restaurants and hotels to feature their businesses in the recommendation section. These businesses can pay for advertising within the app to attract tourists looking for food and accommodation.
-
-- **Data Analytics**: Collect and analyze user data to provide insights to local businesses about visitor preferences and behaviors, allowing them to tailor their services to better suit the needs of tourists.
+Through our app, restaurants and hotels gain profits as they are tied up with us so that they
+will be suggested accordingly on our app. We can also collaborate with riding partners like
+Rapido, Ola, etc. so that it will become very convenient for tourists to go to hotels and sites
+quickly and easily. From these collaborating partners and hotels we will gain profits.
 
 ## Installation
 
