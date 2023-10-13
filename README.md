@@ -82,7 +82,7 @@ To use Parryatan, follow these steps:
 
 <div align="center">
   <p style="background-color: #F4F4F4; padding: 20px; border-radius: 10px;">
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; flex-direction: row">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; flex-direction: column-reverse">
       <div style="text-align: center; padding: 20px; margin: 10px; background-color: #FFFFFF; border-radius: 10px;">
         <img src="https://github.com/anaymaurya04.png" alt="Anay Maurya" width="100" style="border-radius: 50%;">
         <h4>Anay Maurya</h4>
