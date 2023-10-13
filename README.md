@@ -4,11 +4,11 @@ Parryatan is a mobile application developed using Flutter, designed to enhance t
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Business Idea](#business-idea)
-4. [Installation](#installation)
-5. [Usage](#usage)
+ [Introduction](#introduction)
+ [Features](#features)
+ [Business Idea](#business-idea)
+ [Installation](#installation)
+ [Usage](#usage)
 
 ## Introduction
 
@@ -16,23 +16,23 @@ Parryatan is your ultimate travel companion, providing instant access to relevan
 
 ## Features
 
-### 1. QR Code Scanning
+###  QR Code Scanning
 
 Parryatan allows users to scan QR codes placed near monuments and tourist attractions. This functionality instantly provides detailed information about the site, including its history, significance, and other interesting facts.
 
-### 2. Text-to-Speech Functionality
+###  Text-to-Speech Functionality
 
 For users who prefer to listen rather than read, Parryatan offers a text-to-speech feature. It reads aloud the information about the monument or attraction, making it accessible to a wider audience, including those with visual impairments.
 
-### 3. Translation
+###  Translation
 
 Parryatan caters to a global audience by providing real-time translation services. Users can select their preferred language, and the app will translate the information into their chosen language, breaking down language barriers for travelers.
 
-### 4. Recommendations
+###  Recommendations
 
 The app takes your travel experience to the next level by recommending local delicacies and affordable hotels near the tourist attraction. These recommendations are designed to help you savor local flavors and find a comfortable place to stay without breaking the bank.
 
-## Business IdeaBusiness perspective of our app :
+##  Business IdeaBusiness perspective of our app :
 
 Through our app, restaurants and hotels gain profits as they are tied up with us so that they
 will be suggested accordingly on our app. We can also collaborate with riding partners like
