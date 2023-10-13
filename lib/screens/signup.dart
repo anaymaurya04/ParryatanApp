@@ -9,7 +9,6 @@ import 'package:test_scanner/color/color.dart';
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
-
   @override
   State<SignupPage> createState() => _SignupPageState();
 }
@@ -30,6 +29,7 @@ class _SignupPageState extends State<SignupPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
+                    requestCameraPermission();
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
                       return const MyHomePage();

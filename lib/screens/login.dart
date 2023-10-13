@@ -5,21 +5,45 @@ import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/screens/homepage.dart';
 import 'package:test_scanner/screens/signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
-
-
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> _signInWithEmailAndPassword() async {
+    try {
+      UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim(),
+      );
+
+      // If login is successful, navigate to the home page or perform any desired action
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+        return const MyHomePage();
+      }));
+    } catch (e) {
+      // Handle login errors (e.g., incorrect password, user not found)
+      print("Error: $e");
+      // Show error message to the user
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Failed to sign in. Please check your credentials."),
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: gblack,
+      backgroundColor: Color.fromARGB(225, 34, 35, 58),
       body: Stack(
         children: [
           Padding(
@@ -31,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
                 opacity: 0.5,
                 child: TextButton(
                   onPressed: () {
+                    requestCameraPermission();
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) {
                       return const MyHomePage();
@@ -39,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text(
                     'Skip',
                     style: TextStyle(
-                      color: gskin,
+                      color: Color.fromARGB(223, 243, 232, 228),
                       fontSize: 12,
                       fontFamily: "Nexa-Trial-Regular",
                     ),
@@ -60,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Text(
                       'Login',
                       style: TextStyle(
-                        color: gskin,
+                        color: Color.fromARGB(223, 243, 232, 228),
                         fontFamily: "Nexa-Trial-Regular",
                         fontSize: 30,
                       ),
@@ -73,10 +98,10 @@ class _LoginPageState extends State<LoginPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
+                            controller: _emailController,
                             style: const TextStyle(
                               fontSize: 16,
-                              color: gskin,
-                              fontFamily: "Nexa-Trial-Regular",
+                              color: Color.fromARGB(223, 243, 232, 228),
                             ),
                             decoration: InputDecoration(
                               labelText: 'Email Id',
@@ -94,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                  color: gskin,
+                                  color: Color.fromARGB(223, 243, 232, 228),
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
@@ -110,10 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                             height: 28,
                           ),
                           TextFormField(
+                            controller: _passwordController,
                             style: const TextStyle(
                               fontSize: 16,
-                              color: gskin,
-                              fontFamily: "Nexa-Trial-Regular",
+                              color: Color.fromARGB(223, 243, 232, 228),
                             ),
                             decoration: InputDecoration(
                               labelText: 'Password',
@@ -131,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide: const BorderSide(
-                                  color: gskin,
+                                  color: Color.fromARGB(223, 243, 232, 228),
                                 ),
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
@@ -176,7 +201,7 @@ class _LoginPageState extends State<LoginPage> {
                     Container(
                       height: 35,
                       decoration: BoxDecoration(
-                        color: gpurple,
+                        color: Color.fromARGB(225, 74, 78, 105),
                         borderRadius: BorderRadius.circular(13.0),
                         boxShadow: const [
                           BoxShadow(
@@ -187,7 +212,9 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _signInWithEmailAndPassword();
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           elevation: 0,
@@ -219,7 +246,7 @@ class _LoginPageState extends State<LoginPage> {
                         child: const Text(
                           'New User? Register',
                           style: TextStyle(
-                            color: gskin,
+                            color: Color.fromARGB(223, 243, 232, 228),
                             fontSize: 12,
                             fontFamily: "Nexa-Trial-Regular",
                           ),
