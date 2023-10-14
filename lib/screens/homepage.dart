@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
 import 'package:flutter/services.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/account.dart';
 import 'package:test_scanner/screens/drawer.dart';
 import 'package:test_scanner/main.dart';
+import 'package:test_scanner/screens/hpscreen/explore.dart';
+import 'package:test_scanner/screens/hpscreen/food.dart';
+import 'package:test_scanner/screens/hpscreen/hotel.dart';
+import 'package:test_scanner/screens/hpscreen/rides.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -173,7 +176,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       child: GestureDetector(
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return const Acc(); 
+                              return const Explore(); 
                           }));
                         },
                         child: Container(
@@ -193,8 +196,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          // Your onPressed function goes here
-                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const Food(); 
+                          }));
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -212,9 +216,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       child: GestureDetector(
-                        onTap: () {
-                          // Your onPressed function goes here
-                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                        onTap: () { 
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const Hotel(); 
+                          }));
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -233,8 +238,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          // Your onPressed function goes here
-                          // For example, you can navigate to another screen, show a dialog, or perform any action you need.
+                          Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const Rides(); 
+                          }));
                         },
                         child: Container(
                           decoration: BoxDecoration(
