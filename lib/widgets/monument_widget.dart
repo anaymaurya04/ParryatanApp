@@ -146,7 +146,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
               Expanded(
                 flex: 5,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(25),
                   clipBehavior: Clip.hardEdge,
                   child: Image.asset(
                     widget.imageAsset,
