@@ -10,6 +10,7 @@ import 'package:test_scanner/screens/hpscreen/food.dart';
 import 'package:test_scanner/screens/hpscreen/hotel.dart';
 import 'package:test_scanner/screens/hpscreen/rides.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -21,7 +22,33 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   String? result;
-  String? temp = "Anay";
+  String? temp = "User";
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserName();
+  }
+
+  Future<void> fetchUserName() async {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      // Fetch the user's name from Firestore using the user's UID
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      if (userDoc.exists) {
+        String userName = userDoc['name'];
+        setState(() {
+          temp = userName;
+        });
+      }
+    }
+  }
+
   void navigateToMonument(
       BuildContext context, String title, String imageAsset, String content) {
     Navigator.of(context).push(MaterialPageRoute(builder: (context) {
@@ -175,8 +202,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return const Explore(); 
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Explore();
                           }));
                         },
                         child: Container(
@@ -196,8 +224,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return const Food(); 
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Food();
                           }));
                         },
                         child: Container(
@@ -216,9 +245,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     Expanded(
                       child: GestureDetector(
-                        onTap: () { 
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return const Hotel(); 
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Hotel();
                           }));
                         },
                         child: Container(
@@ -238,8 +268,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context){
-                              return const Rides(); 
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const Rides();
                           }));
                         },
                         child: Container(
