@@ -1,9 +1,9 @@
-// ignore_for_file: unused_import
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:test_scanner/screens/homepage.dart';
 import 'package:test_scanner/screens/login.dart';
 import 'package:test_scanner/main.dart';
-import 'package:material/material.dart';
 import 'package:test_scanner/color/color.dart';
 
 class SignupPage extends StatefulWidget {
@@ -14,6 +14,42 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  Future<void> _signUp() async {
+    try {
+      UserCredential userCredential =
+          await _auth.createUserWithEmailAndPassword(
+        email: _emailController.text,
+        password: _passwordController.text,
+      );
+
+      User? user = userCredential.user;
+
+      if (user != null) {
+        // Store additional user data in Firestore
+        await _firestore.collection('users').doc(user.uid).set({
+          'name': _nameController.text,
+          'email': _emailController.text,
+        });
+
+        // Navigate to the home page after successful signup
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return LoginPage();
+        }));
+      }
+    } catch (e) {
+      print("Error: $e");
+      // Handle signup errors here
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,10 +108,10 @@ class _SignupPageState extends State<SignupPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
+                            controller: _nameController,
                             style: const TextStyle(
                               fontSize: 16,
                               color: gskin,
-                              fontFamily: "Nexa-Trial-Regular",
                             ),
                             decoration: InputDecoration(
                               labelText: 'Name',
@@ -109,10 +145,10 @@ class _SignupPageState extends State<SignupPage> {
                             height: 25,
                           ),
                           TextFormField(
+                            controller: _emailController,
                             style: const TextStyle(
                               fontSize: 16,
                               color: gskin,
-                              fontFamily: "Nexa-Trial-Regular",
                             ),
                             decoration: InputDecoration(
                               labelText: 'Email Id',
@@ -150,6 +186,7 @@ class _SignupPageState extends State<SignupPage> {
                             height: 25,
                           ),
                           TextFormField(
+                            controller: _passwordController,
                             style: const TextStyle(
                               fontSize: 16,
                               color: gskin,
@@ -227,12 +264,7 @@ class _SignupPageState extends State<SignupPage> {
                         ],
                       ),
                       child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const MyHomePage();
-                          }));
-                        },
+                        onPressed: _signUp,
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           elevation: 0,
