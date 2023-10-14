@@ -19,6 +19,23 @@ class MonumentWidget extends StatefulWidget {
   State<MonumentWidget> createState() => _MonumentWidgetState();
 }
 
+class SliderData {
+  final String imageAsset;
+  final String date;
+
+  SliderData({
+    required this.imageAsset,
+    required this.date,
+  });
+}
+
+List<String> imageAssets = [
+  'lib/images/KB1796.jpg',
+  'lib/images/KBA1870.jpg',
+  'lib/images/KB2009.jpg',
+  'lib/images/KBUC.jpg',
+];
+
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
@@ -100,7 +117,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
     return Scaffold(
       backgroundColor: gskin,
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 65,
         leading: IconButton(
           icon: Image.asset('lib/icons/arrow-left.png'),
           onPressed: () {
@@ -120,7 +137,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: 700,
+          height: 1000,
           width: double.infinity,
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -138,11 +155,11 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                 ),
               ),
               const SizedBox(
-                height: 1,
-                width: 1,
+                height: 3,
+                width: 3,
               ),
               Expanded(
-                flex: 8,
+                flex: 6,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
@@ -166,15 +183,45 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                   ),
                 ),
               ),
-              Slider(
-                value: rating,
-                onChanged: (newRating) {
-                  setState(() => rating = newRating);
-                },
-                divisions: dateLabels.length - 1,
-                label: dateLabels[rating.toInt()],
-                min: 0,
-                max: dateLabels.length - 1.0,
+              const SizedBox(
+                height: 10,
+                width: 10,
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Slider(
+                    value: rating,
+                    onChanged: (newRating) {
+                      setState(() => rating = newRating);
+                    },
+                    divisions: dateLabels.length - 1,
+                    label: dateLabels[rating.toInt()],
+                    min: 0,
+                    max: dateLabels.length - 1.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          imageAssets[rating.toInt()],
+                          width: 300,
+                          height: 300,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          dateLabels[rating.toInt()],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontFamily: "Nexa-Trial-Regular",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -182,21 +229,21 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                   value: selectedLanguageCode,
                   items: const [
                     DropdownMenuItem(
-                      child: Text('English'),
                       value: 'en',
+                      child: Text('English'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Hindi'),
                       value: 'hi',
+                      child: Text('Hindi'),
                     ),
                     // Add more languages as needed
                     DropdownMenuItem(
-                      child: Text('French'),
                       value: 'fr',
+                      child: Text('French'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Arabic'),
                       value: 'ar',
+                      child: Text('Arabic'),
                     ),
                   ],
                   onChanged: (String? newValue) {
