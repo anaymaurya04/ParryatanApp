@@ -3,7 +3,7 @@ import 'package:test_scanner/color/color.dart';
 import 'package:test_scanner/screens/monu_page.dart';
 
 class Explore extends StatelessWidget {
-  const Explore({Key? key});
+   const Explore({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class TappableRoundedListItem extends StatelessWidget {
   final String imagePath;
   final VoidCallback onTap;
 
-  TappableRoundedListItem(this.imagePath, this.onTap);
+  const TappableRoundedListItem(this.imagePath, this.onTap, {super.key});
 
   @override
   Widget build(BuildContext context) {

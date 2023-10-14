@@ -19,6 +19,24 @@ class MonumentWidget extends StatefulWidget {
   State<MonumentWidget> createState() => _MonumentWidgetState();
 }
 
+class SliderData {
+  final String imageAsset;
+  final String date;
+
+  SliderData({
+    required this.imageAsset,
+    required this.date,
+  });
+}
+List<String> imageAssets = [
+  'lib/images/search.png',
+  'lib/images/Khusrubagh Image.png',
+  'lib/images/Khusrubagh Image.png',
+  'lib/images/Khusrubagh Image.png',
+];
+
+
+
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
   bool isPlaying = false;
@@ -142,7 +160,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                 width: 1,
               ),
               Expanded(
-                flex: 8,
+                flex: 6,
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
@@ -167,36 +185,56 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                 ),
               ),
               Slider(
-                value: rating,
-                onChanged: (newRating) {
-                  setState(() => rating = newRating);
-                },
-                divisions: dateLabels.length - 1,
-                label: dateLabels[rating.toInt()],
-                min: 0,
-                max: dateLabels.length - 1.0,
-              ),
+  value: rating,
+  onChanged: (newRating) {
+    setState(() => rating = newRating);
+  },
+  divisions: dateLabels.length - 1,
+  label: dateLabels[rating.toInt()],
+  min: 0,
+  max: dateLabels.length - 1.0,
+),
+Padding(
+  padding: const EdgeInsets.all(16.0),
+  child: Column(
+    children: [
+      Image.asset(imageAssets[rating.toInt()],
+        width: 100,
+        height: 100,
+        fit: BoxFit.cover,
+      ),
+      const SizedBox(height: 8),
+      Text(dateLabels[rating.toInt()],
+        style: const TextStyle(
+          fontSize: 16,
+          fontFamily: "Nexa-Trial-Regular",
+        ),
+      ),
+    ],
+  ),
+),
+
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: DropdownButton<String>(
                   value: selectedLanguageCode,
                   items: const [
                     DropdownMenuItem(
-                      child: Text('English'),
                       value: 'en',
+                      child: Text('English'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Hindi'),
                       value: 'hi',
+                      child: Text('Hindi'),
                     ),
                     // Add more languages as needed
                     DropdownMenuItem(
-                      child: Text('French'),
                       value: 'fr',
+                      child: Text('French'),
                     ),
                     DropdownMenuItem(
-                      child: Text('Arabic'),
                       value: 'ar',
+                      child: Text('Arabic'),
                     ),
                   ],
                   onChanged: (String? newValue) {
