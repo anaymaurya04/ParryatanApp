@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:test_scanner/color/color.dart';
-import 'package:test_scanner/screens/homepage.dart';
 import 'package:translator/translator.dart';
 
 class MonumentWidget extends StatefulWidget {
