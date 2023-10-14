@@ -24,6 +24,16 @@ class _MonumentWidgetState extends State<MonumentWidget> {
   bool isPlaying = false;
 
   String selectedLanguageCode = 'en'; // Default language code, e.g., Hindi
+  double rating = 0;
+
+  List<String> dateLabels = [
+    '1796',
+    '1870',
+    '2009',
+    'Current',
+  ];
+
+  int selectedDivision = 0;
 
   @override
   void initState() {
@@ -155,6 +165,16 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                     ),
                   ),
                 ),
+              ),
+              Slider(
+                value: rating,
+                onChanged: (newRating) {
+                  setState(() => rating = newRating);
+                },
+                divisions: dateLabels.length - 1,
+                label: dateLabels[rating.toInt()],
+                min: 0,
+                max: dateLabels.length - 1.0,
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
