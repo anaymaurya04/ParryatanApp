@@ -27,6 +27,57 @@ class Food extends StatelessWidget {
         ),
         elevation: 0.0,
       ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: 800,
+          width: double.infinity,
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              TappableRoundedListItem('lib/images/ElChico.png', () {}),
+              const SizedBox(height: 15),
+              TappableRoundedListItem('lib/images/Eden.png', () {
+                // Add your action here when the second item is tapped.
+              }),
+              const SizedBox(height: 15),
+              TappableRoundedListItem('lib/images/Dewsis.png', () {
+                // Add your action here when the third item is tapped.
+              }),
+              const SizedBox(height: 15),
+              TappableRoundedListItem('lib/images/Pind.png', () {
+                // Add your action here when the fourth item is tapped.
+              }),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TappableRoundedListItem extends StatelessWidget {
+  final String imagePath;
+  final VoidCallback onTap;
+
+  TappableRoundedListItem(this.imagePath, this.onTap);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: glight,
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
     );
   }
 }

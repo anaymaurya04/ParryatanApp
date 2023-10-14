@@ -27,6 +27,49 @@ class Rides extends StatelessWidget {
         ),
         elevation: 0.0,
       ),
+      body: SingleChildScrollView(
+        child: Container(
+          height: 850,
+          width: double.infinity,
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              TappableRoundedListItem('lib/images/car.png', () {}),
+              const SizedBox(height: 15),
+              TappableRoundedListItem('lib/images/autotaxi.png', () {}),
+              const SizedBox(height: 15),
+              TappableRoundedListItem('lib/images/bike.png', () {}),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TappableRoundedListItem extends StatelessWidget {
+  final String imagePath;
+  final VoidCallback onTap;
+
+  TappableRoundedListItem(this.imagePath, this.onTap);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(25),
+          color: glight,
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(25),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.fill,
+          ),
+        ),
+      ),
     );
   }
 }
