@@ -18,7 +18,8 @@ class FoodCon extends StatelessWidget {
         ),
         centerTitle: true,
         title: const Text(
-          'Menu',
+          'Food',
+
           style: TextStyle(
             fontFamily: "Nexa-Trial-Regular",
             fontSize: 20,
@@ -51,18 +52,23 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
+
                       'lib/images/donut.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
             ),
+
              const SizedBox(height: 20),
-            // const SizedBox(
-            //     width: 16), // Add some space between the image and text
-            // Text
+
             const Expanded(
               child: Text(
+
+                
+
                 "Donut",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -71,6 +77,7 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
             
             const Positioned(
             top: 5, // Adjust the vertical position
@@ -85,6 +92,7 @@ class FoodCon extends StatelessWidget {
           ]),
         ),
         const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -108,18 +116,25 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
+ // Replace with your image path
+
                       'lib/images/thali.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
             ),
+
     
+
             // const SizedBox(
             //     width: 16), // Add some space between the image and text
             // Text
             const Expanded(
               child: Text(
+
                 "Burger + Fries",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -128,6 +143,7 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
             
             const Positioned(
             top: 5, // Adjust the vertical position
@@ -142,6 +158,7 @@ class FoodCon extends StatelessWidget {
           ]),
         ),
         const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -165,7 +182,9 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
+
                       'lib/images/thali2.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
@@ -175,7 +194,9 @@ class FoodCon extends StatelessWidget {
             // Text
             const Expanded(
               child: Text(
+
                 "Indian Thali",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -184,6 +205,7 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
             
             const Positioned(
             top: 5, // Adjust the vertical position
@@ -198,6 +220,7 @@ class FoodCon extends StatelessWidget {
           ]),
         ),
         const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -221,7 +244,9 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
+
                       'lib/images/pizza.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
@@ -231,7 +256,9 @@ class FoodCon extends StatelessWidget {
             // Text
             const Expanded(
               child: Text(
+
                 "Pizza",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -240,6 +267,7 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
             const Positioned(
             top: 5, // Adjust the vertical position
             right: 5, // Adjust the horizontal position
@@ -252,6 +280,7 @@ class FoodCon extends StatelessWidget {
               ),))
           ],),
         ),
+
       ]),
     );
   }

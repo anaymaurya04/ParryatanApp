@@ -28,13 +28,14 @@ class SliderData {
     required this.date,
   });
 }
-List<String> imageAssets = [
-  'lib/images/search.png',
-  'lib/images/Khusrubagh Image.png',
-  'lib/images/Khusrubagh Image.png',
-  'lib/images/Khusrubagh Image.png',
-];
 
+
+List<String> imageAssets = [
+  'lib/images/KB1796.jpg',
+  'lib/images/KBA1870.jpg',
+  'lib/images/KB2009.jpg',
+  'lib/images/KBUC.jpg',
+];
 
 
 class _MonumentWidgetState extends State<MonumentWidget> {
@@ -118,7 +119,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
     return Scaffold(
       backgroundColor: gskin,
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 65,
         leading: IconButton(
           icon: Image.asset('lib/icons/arrow-left.png'),
           onPressed: () {
@@ -138,7 +139,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
       ),
       body: SingleChildScrollView(
         child: Container(
-          height: 700,
+          height: 1000,
           width: double.infinity,
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -147,7 +148,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
               Expanded(
                 flex: 5,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(25),
                   clipBehavior: Clip.hardEdge,
                   child: Image.asset(
                     widget.imageAsset,
@@ -156,8 +157,8 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                 ),
               ),
               const SizedBox(
-                height: 1,
-                width: 1,
+                height: 3,
+                width: 3,
               ),
               Expanded(
                 flex: 6,
@@ -184,35 +185,47 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                   ),
                 ),
               ),
-              Slider(
-  value: rating,
-  onChanged: (newRating) {
-    setState(() => rating = newRating);
-  },
-  divisions: dateLabels.length - 1,
-  label: dateLabels[rating.toInt()],
-  min: 0,
-  max: dateLabels.length - 1.0,
-),
-Padding(
-  padding: const EdgeInsets.all(16.0),
-  child: Column(
-    children: [
-      Image.asset(imageAssets[rating.toInt()],
-        width: 100,
-        height: 100,
-        fit: BoxFit.cover,
-      ),
-      const SizedBox(height: 8),
-      Text(dateLabels[rating.toInt()],
-        style: const TextStyle(
-          fontSize: 16,
-          fontFamily: "Nexa-Trial-Regular",
-        ),
-      ),
-    ],
-  ),
-),
+
+              const SizedBox(
+                height: 10,
+                width: 10,
+              ),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Slider(
+                    value: rating,
+                    onChanged: (newRating) {
+                      setState(() => rating = newRating);
+                    },
+                    divisions: dateLabels.length - 1,
+                    label: dateLabels[rating.toInt()],
+                    min: 0,
+                    max: dateLabels.length - 1.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          imageAssets[rating.toInt()],
+                          width: 300,
+                          height: 300,
+                          fit: BoxFit.contain,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          dateLabels[rating.toInt()],
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontFamily: "Nexa-Trial-Regular",
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
 
               Padding(
                 padding: const EdgeInsets.all(16.0),

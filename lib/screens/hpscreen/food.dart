@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
+import 'package:test_scanner/screens/foodcon.dart';
 
 class Food extends StatelessWidget {
   const Food({super.key});
@@ -34,7 +35,10 @@ class Food extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: ListView(
             children: [
-              TappableRoundedListItem('lib/images/ElChico.png', () {}),
+              TappableRoundedListItem('lib/images/ElChico.png', () {
+                   Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const FoodCon();}));
+              }),
               const SizedBox(height: 15),
               TappableRoundedListItem('lib/images/Eden.png', () {
                 Navigator.push(context, MaterialPageRoute(builder: (context){
