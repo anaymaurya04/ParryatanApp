@@ -37,15 +37,21 @@ class Food extends StatelessWidget {
               TappableRoundedListItem('lib/images/ElChico.png', () {}),
               const SizedBox(height: 15),
               TappableRoundedListItem('lib/images/Eden.png', () {
-                // Add your action here when the second item is tapped.
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const FoodCon();}));
+              
               }),
               const SizedBox(height: 15),
               TappableRoundedListItem('lib/images/Dewsis.png', () {
-                // Add your action here when the third item is tapped.
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const FoodCon();}));
+              
               }),
               const SizedBox(height: 15),
               TappableRoundedListItem('lib/images/Pind.png', () {
-                // Add your action here when the fourth item is tapped.
+                Navigator.push(context, MaterialPageRoute(builder: (context){
+                              return const FoodCon();}));
+              
               }),
             ],
           ),

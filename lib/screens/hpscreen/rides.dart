@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Rides extends StatelessWidget {
   const Rides({super.key});
@@ -34,11 +35,22 @@ class Rides extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: ListView(
             children: [
-              TappableRoundedListItem('lib/images/car.png', () {}),
+              TappableRoundedListItem('lib/images/car.png', () {
+                launchUrl(
+                    Uri.parse("https://www.uber.com/in/en/ride/ubertaxi/"),
+                    mode: LaunchMode.inAppWebView);
+              }),
               const SizedBox(height: 15),
-              TappableRoundedListItem('lib/images/autotaxi.png', () {}),
+              TappableRoundedListItem('lib/images/autotaxi.png', () {
+                launchUrl(
+                    Uri.parse("https://www.uber.com/in/en/ride/uber-auto/"),
+                    mode: LaunchMode.inAppWebView);
+              }),
               const SizedBox(height: 15),
-              TappableRoundedListItem('lib/images/bike.png', () {}),
+              TappableRoundedListItem('lib/images/bike.png', () {
+                launchUrl(Uri.parse("https://www.rapido.bike/"),
+                    mode: LaunchMode.inAppWebView);
+              }),
             ],
           ),
         ),
