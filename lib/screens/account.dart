@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test_scanner/color/color.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Acc extends StatefulWidget {
   const Acc({Key? key}) : super(key: key);
@@ -12,6 +14,34 @@ class _AccState extends State<Acc> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool isEditMode = false;
+
+  String? userName = "User"; // Default value, change as needed
+  String? userEmail = "user@example.com"; // Default value, change as needed
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserData();
+  }
+
+  Future<void> fetchUserData() async {
+    User? user = FirebaseAuth.instance.currentUser;
+
+    if (user != null) {
+      // Fetch the user's data from Firestore using the user's UID
+      DocumentSnapshot userDoc = await FirebaseFirestore.instance
+          .collection("users")
+          .doc(user.uid)
+          .get();
+
+      if (userDoc.exists) {
+        setState(() {
+          userName = userDoc['name'];
+          userEmail = userDoc['email'];
+        });
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +87,8 @@ class _AccState extends State<Acc> {
                       ),
                     ),
                   ),
-                  const Text(
-                    "Anay Maurya",
+                  Text(
+                    userName ?? "User",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -68,7 +98,7 @@ class _AccState extends State<Acc> {
                     height: 5,
                     width: 5,
                   ),
-                  Text("anaymaurya04@gmail.com",
+                  Text(userEmail ?? "user@example.com",
                       style: TextStyle(
                           color: Colors.grey[200],
                           fontSize: 14,
@@ -91,14 +121,15 @@ class _AccState extends State<Acc> {
                         fontFamily: "Nexa-Trial-Regular",
                       ),
                       decoration: InputDecoration(
-                        labelText: 'Anay Maurya',
+                        labelText: userName ?? "User",
                         labelStyle: const TextStyle(color: Colors.black),
                         alignLabelWithHint: true,
                         hintText: 'Name',
                         hintStyle: const TextStyle(
                           color: Colors.grey,
                         ),
-                        enabled: isEditMode, // Enable or disable based on edit mode
+                        enabled:
+                            isEditMode, // Enable or disable based on edit mode
                         // Other decoration properties...
                       ),
                     ),
@@ -127,7 +158,7 @@ class _AccState extends State<Acc> {
                         hintStyle: const TextStyle(
                           color: Colors.grey,
                         ),
-                        enabled: isEditMode, // Enable or disable based on edit 
+                        enabled: isEditMode, // Enable or disable based on edit
                         // Other decoration properties...
                       ),
                     ),
