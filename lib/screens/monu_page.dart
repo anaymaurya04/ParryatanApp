@@ -6,7 +6,7 @@ class Monupage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MonumentWidget(
+    return  const MonumentWidget(
       title: "",
       imageAsset: '',
       content:

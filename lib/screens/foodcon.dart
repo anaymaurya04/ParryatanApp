@@ -19,6 +19,7 @@ class FoodCon extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           'Food',
+
           style: TextStyle(
             fontFamily: "Nexa-Trial-Regular",
             fontSize: 20,
@@ -51,17 +52,23 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
-                      'lib/images/Anay.jpeg'), // Replace with your image path
+
+                      'lib/images/donut.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            // const SizedBox(
-            //     width: 16), // Add some space between the image and text
-            // Text
+
+             const SizedBox(height: 20),
+
             const Expanded(
               child: Text(
-                "French Toast",
+
+                
+
+                "Donut",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -70,8 +77,22 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
+            
+            const Positioned(
+            top: 5, // Adjust the vertical position
+            right: 5, // Adjust the horizontal position
+            child: Text(
+              '₹100', // Display the price
+              style: TextStyle(
+                fontSize: 14,
+                fontFamily: "NexaTextDemo-Bold",
+                fontWeight: FontWeight.bold,
+              ),))
           ]),
         ),
+        const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -95,17 +116,25 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
-                      'lib/images/Anay.jpeg'), // Replace with your image path
+ // Replace with your image path
+
+                      'lib/images/thali.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
             ),
+
+    
+
             // const SizedBox(
             //     width: 16), // Add some space between the image and text
             // Text
             const Expanded(
               child: Text(
-                "French Toast",
+
+                "Burger + Fries",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -114,8 +143,22 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
+            
+            const Positioned(
+            top: 5, // Adjust the vertical position
+            right: 5, // Adjust the horizontal position
+            child: Text(
+              '₹120', // Display the price
+              style: TextStyle(
+                fontSize: 14,
+                fontFamily: "NexaTextDemo-Bold",
+                fontWeight: FontWeight.bold,
+              ),))
           ]),
         ),
+        const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -139,7 +182,9 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
-                      'lib/images/Anay.jpeg'), // Replace with your image path
+
+                      'lib/images/thali2.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
@@ -149,7 +194,9 @@ class FoodCon extends StatelessWidget {
             // Text
             const Expanded(
               child: Text(
-                "French Toast",
+
+                "Indian Thali",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -158,8 +205,22 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
+
+            
+            const Positioned(
+            top: 5, // Adjust the vertical position
+            right: 5, // Adjust the horizontal position
+            child: Text(
+              '₹300', // Display the price
+              style: TextStyle(
+                fontSize: 14,
+                fontFamily: "NexaTextDemo-Bold",
+                fontWeight: FontWeight.bold,
+              ),))
           ]),
         ),
+        const SizedBox(height: 20),
+
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 25),
           decoration: BoxDecoration(
@@ -183,7 +244,9 @@ class FoodCon extends StatelessWidget {
                 shape: BoxShape.circle,
                 image: DecorationImage(
                   image: AssetImage(
-                      'lib/images/Anay.jpeg'), // Replace with your image path
+
+                      'lib/images/pizza.jpg'), // Replace with your image path
+
                   fit: BoxFit.cover,
                 ),
               ),
@@ -193,7 +256,9 @@ class FoodCon extends StatelessWidget {
             // Text
             const Expanded(
               child: Text(
-                "French Toast",
+
+                "Pizza",
+
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 18,
@@ -202,8 +267,20 @@ class FoodCon extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
-        )
+
+            const Positioned(
+            top: 5, // Adjust the vertical position
+            right: 5, // Adjust the horizontal position
+            child: Text(
+              '₹500', // Display the price
+              style: TextStyle(
+                fontSize: 14,
+                fontFamily: "NexaTextDemo-Bold",
+                fontWeight: FontWeight.bold,
+              ),))
+          ],),
+        ),
+
       ]),
     );
   }

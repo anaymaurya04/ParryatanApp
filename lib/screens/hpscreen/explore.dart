@@ -4,7 +4,7 @@ import 'package:test_scanner/screens/monu_page.dart';
 import 'package:test_scanner/widgets/monument_widget.dart';
 
 class Explore extends StatelessWidget {
-  const Explore({Key? key});
+   const Explore({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class TappableRoundedListItem extends StatelessWidget {
   final String imagePath;
   final VoidCallback onTap;
 
-  TappableRoundedListItem(this.imagePath, this.onTap);
+  const TappableRoundedListItem(this.imagePath, this.onTap, {super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -29,12 +29,14 @@ class SliderData {
   });
 }
 
+
 List<String> imageAssets = [
   'lib/images/KB1796.jpg',
   'lib/images/KBA1870.jpg',
   'lib/images/KB2009.jpg',
   'lib/images/KBUC.jpg',
 ];
+
 
 class _MonumentWidgetState extends State<MonumentWidget> {
   FlutterTts flutterTts = FlutterTts();
@@ -183,6 +185,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                   ),
                 ),
               ),
+
               const SizedBox(
                 height: 10,
                 width: 10,
@@ -223,6 +226,7 @@ class _MonumentWidgetState extends State<MonumentWidget> {
                   ),
                 ],
               ),
+
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: DropdownButton<String>(
